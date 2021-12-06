@@ -19,6 +19,8 @@ body {
   position: relative;
   overflow: hidden;
   border: 6px solid gold;
+  display:flex;
+  flex-wrap:wrap;
 }
 .card-body-image{
   width:98%;
