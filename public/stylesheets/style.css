@@ -12,7 +12,7 @@ body {
   flex-wrap:wrap;
 }
 .card{
-  background: #ffe08a;
+  background: #e8e8e8;
   border-radius:16px;
   width: 250px;
   height: 400px;
@@ -23,8 +23,9 @@ body {
   flex-wrap:wrap;
 }
 .card-body-image{
-  width:98%;
-  height:190px;
+  width:200px;
+  height:200px;
+  padding-left: 15%;
   border: 2px solid black;
 }
 .card-title {
@@ -98,5 +99,5 @@ body {
 .type-retreat{
   height:20px;
   width:20px;
-  padding-left:75%;
+  padding-left:55%;
 }

@@ -1,6 +1,7 @@
 mixin Form(PokemonCard, actionURL, mode, title)
 
     div.form-panel
+        div.header= title
         form(action=actionURL method='post')
             div.form-input
                 label(for='name') Name:

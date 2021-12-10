@@ -30,20 +30,65 @@ module.exports.addCard = async function(req,res){
         {
             name: req.body.name,
             Hp: req.body.Hp,
-            Image1: req.body.Image1,
-            Image2: req.body.Image2,
-            Image3: req.body.Image3,
+            image1: req.body.image1,
+            image2: req.body.image2,
+            image3: req.body.image3,
             move: req.body.move,
             damage: req.body.damage,
-            Image4: req.body.Image4,
+            image4: req.body.image4,
             move1: req.body.move1,
             damage1: req.body.damage1,
             weakness: req.body.weakness,
             resistance: req.body.resistance,
             retreatcost: req.body.retreatcost,
             image: req.body.image,
-            image1: req.body.image1
+            image5: req.body.image5
         });
     res.redirect('/')
 };
 
+module.exports.renderEditForm = async function (req,res,next) {
+    const PokemonCard = await Pokemon.findByPk(
+        req.params.id
+    );
+    res.render('edit',{PokemonCard})
+};
+
+module.exports.updateRestaurant = async function (req,res) {
+    await Pokemon.update(
+        {
+            name: req.body.name,
+            Hp: req.body.Hp,
+            image1: req.body.image1,
+            image2: req.body.image2,
+            image3: req.body.image3,
+            move: req.body.move,
+            damage: req.body.damage,
+            image4: req.body.image4,
+            move1: req.body.move1,
+            damage1: req.body.damage1,
+            weakness: req.body.weakness,
+            resistance: req.body.resistance,
+            retreatcost: req.body.retreatcost,
+            image: req.body.image,
+            image5: req.body.image5
+        },
+        {
+        where:
+            {
+                id:req.params.id
+            }
+        });
+    res.redirect('/');
+};
+
+module.exports.deleteCard = async function(res,req){
+    await Pokemon.destroy(
+        {
+            where:
+                {
+                    id: req.params.id
+                }
+        });
+    res.redirect('/');
+};

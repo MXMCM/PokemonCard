@@ -5,15 +5,15 @@ mixin Card(PokemonCard)
             div.card-title=PokemonCard.name
             div.card-title-Hp=PokemonCard.Hp
             div.card-title-type
-                img.card-title-type-image(src= PokemonCard.Image1)
+                img.card-title-type-image(src= PokemonCard.image1)
             div.card-body
-                img.card-body-image(src=PokemonCard.Image2)
+                img.card-body-image(src=PokemonCard.image2)
             div.move1
-                img.move1-energy(src=PokemonCard.Image3)
+                img.move1-energy(src=PokemonCard.image3)
                 div.move1-name=PokemonCard.move
                 div.move1-damage=PokemonCard.damage
             div.move2
-                img.move2-energy(src=PokemonCard.Image4)
+                img.move2-energy(src=PokemonCard.image4)
                 div.move2-name=PokemonCard.move1
                 div.move2-damage=PokemonCard.damage1
             div.info
@@ -22,5 +22,6 @@ mixin Card(PokemonCard)
                 div.info-retreat=PokemonCard.retreatcost
             div.type
                 img.type-weakenss(src=PokemonCard.image)
-                img.type-resistance(src=PokemonCard.image2)
-                img.type-retreat(src=PokemonCard.image1)
+                img.type-retreat(src=PokemonCard.image5)
+            div.edit
+                a(href=`/edit/${PokemonCard.id}`) Edit
