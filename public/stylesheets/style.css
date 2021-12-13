@@ -51,11 +51,14 @@ body {
   border-bottom: 2px solid black;
 }
 .card-title-type-image{
+  padding-left: 90%;
   width:24px;
   height:24px;
 }
 .card-title-Hp{
   color:red;
+  font-size: 20px;
+  padding-left: 10px;
 }
 .move1-energy{
   width:20px;

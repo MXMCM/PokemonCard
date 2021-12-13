@@ -1,7 +1,27 @@
 const {Pokemon} = require('../models');
-module.exports.viewAll = async function(req, res, next) {
-    const PokemonTable = await Pokemon.findAll();
-    res.render('index', {PokemonTable})
+const categories = ['Water','Fire','Normal','Electric','Ground','Dragon','Physic','Grass'];
+module.exports.viewAll = async function(req, res) {
+    let searchCategories =['All'];
+    for(let i = 0; i<categories.length; i++){
+        searchCategories.push(categories[i]);
+    }
+    let PokemonTable;
+    let searchCategory = req.query.category || 'All';
+    let searchRandom = req.query.random || false;
+    if (searchCategory==='All'){
+        PokemonTable = await Pokemon.findAll();
+    } else{
+        PokemonTable = await Pokemon.findAll({
+            where: {
+                category: searchCategory
+            }
+        });
+    }
+    if (PokemonTable.length > 0 && searchRandom){
+        let randomIndex = getRandomInt(PokemonTable.length);
+        PokemonTable = [PokemonTable[randomIndex]];
+    }
+    res.render('index', {PokemonTable, categories:searchCategories, searchCategory, searchRandom});
 };
 
 module.exports.renderAddForm = function(req,res,next){
@@ -51,7 +71,7 @@ module.exports.renderEditForm = async function (req,res,next) {
     const PokemonCard = await Pokemon.findByPk(
         req.params.id
     );
-    res.render('edit',{PokemonCard})
+    res.render('add',{PokemonCard})
 };
 
 module.exports.updateRestaurant = async function (req,res) {
@@ -92,3 +112,7 @@ module.exports.deleteCard = async function(res,req){
         });
     res.redirect('/');
 };
+
+function getRandomInt(max){
+    return Math.floor(Math.random()* max);
+}
