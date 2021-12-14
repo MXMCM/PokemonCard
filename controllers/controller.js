@@ -28,9 +28,9 @@ module.exports.renderAddForm = function(req,res,next){
     const PokemonCard = {
         name: "",
         Hp: "",
-        Image1: "",
-        Image2: "",
-        Image3: "",
+        image1: "",
+        image2: "",
+        image3: "",
         move: "",
         damage: "",
         Image4: "",
@@ -40,7 +40,8 @@ module.exports.renderAddForm = function(req,res,next){
         resistance: "",
         retreatcost: "",
         image: "",
-        image1:"",
+        image5:"",
+        category:""
     };
 res.render('add',{PokemonCard});
 };
@@ -62,8 +63,10 @@ module.exports.addCard = async function(req,res){
             resistance: req.body.resistance,
             retreatcost: req.body.retreatcost,
             image: req.body.image,
-            image5: req.body.image5
+            image5: req.body.image5,
+            category: req.body.category
         });
+    console.log(Pokemon);
     res.redirect('/')
 };
 
@@ -91,7 +94,8 @@ module.exports.updateRestaurant = async function (req,res) {
             resistance: req.body.resistance,
             retreatcost: req.body.retreatcost,
             image: req.body.image,
-            image5: req.body.image5
+            image5: req.body.image5,
+            category: req.body.category
         },
         {
         where:

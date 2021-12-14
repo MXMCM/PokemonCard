@@ -23,5 +23,6 @@ mixin Card(PokemonCard)
             div.type
                 img.type-weakenss(src=PokemonCard.image)
                 img.type-retreat(src=PokemonCard.image5)
+            div.category=PokemonCard.category
             div.edit
                 a(href=`/edit/${PokemonCard.id}`) Edit
