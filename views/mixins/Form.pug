@@ -8,16 +8,16 @@ mixin Form(PokemonCard, actionURL, mode, title)
                 input(type='text' id='name' name='name' value=PokemonCard.name)
             div.form-input
                 label(for='Hp') Hp:
-                input(type='text' id='Hp' name='Hp' value=PokemonCard.Hp)
+                input(type='text' id='Hp' name='Hp' value=PokemonCard.hp)
             div.form-input
                 label(for='Image1') Type
-                input(type='text' id='Image1' name='Image1' value=PokemonCard.Image1)
+                input(type='text' id='Image1' name='Image1' value=PokemonCard.image1)
             div.form-input
                 label(for='Image2') Picture
-                input(type='text' id='Image2' name='Image2' value=PokemonCard.Image2)
+                input(type='text' id='Image2' name='Image2' value=PokemonCard.image2)
             div.form-input
                 label(for='Image3') Move 1 energy:
-                input(type='text' id='Image3' name='Image3' value=PokemonCard.Image3)
+                input(type='text' id='Image3' name='Image3' value=PokemonCard.image3)
             div.form-input
                 label(for='move') Move:
                 input(type='text' id='move' name='move' value=PokemonCard.move)
@@ -26,7 +26,7 @@ mixin Form(PokemonCard, actionURL, mode, title)
                 input(type='text' id='damage' name='damage' value=PokemonCard.damage)
             div.form-input
                 label(for='Image4') Move 2 energy:
-                input(type='text' id='Image4' name='Image4' value=PokemonCard.Image4)
+                input(type='text' id='Image4' name='Image4' value=PokemonCard.image4)
             div.form-input
                 label(for='move1') Move1
                 input(type='text' id='move1' name='move1' value=PokemonCard.move1)
@@ -38,7 +38,7 @@ mixin Form(PokemonCard, actionURL, mode, title)
                 input(type='text' id='image' name='image' value=PokemonCard.image)
             div.form-input
                 label(for='image1') Retreat Cost
-                input(type='text' id='image1' name='image1' value=PokemonCard.image1)
+                input(type='text' id='image1' name='image1' value=PokemonCard.image5)
             div.button-row
                 a.button.cancel(href='/') Cancel
                 if (mode==='edit')

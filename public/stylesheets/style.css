@@ -16,7 +16,7 @@ body {
   height: 400px;
   position: relative;
   overflow: hidden;
-  border: 6px solid gold;
+  border: 6px solid black;
   display:flex;
   flex-wrap:wrap;
 }
@@ -104,4 +104,25 @@ body {
 }
 .card{
   background:whitesmoke;
+}
+.Ground{
+  background: sandybrown;
+}
+.Water{
+  background: cornflowerblue;
+}
+.Physic{
+  background: mediumpurple;
+}
+.Grass{
+  background: forestgreen;
+}
+.Electric{
+  background: yellow;
+}
+.Dragon{
+  background: midnightblue;
+}
+.Fire{
+  background: orangered;
 }

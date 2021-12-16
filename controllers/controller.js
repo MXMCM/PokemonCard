@@ -33,7 +33,7 @@ module.exports.renderAddForm = function(req,res,next){
         image3: "",
         move: "",
         damage: "",
-        Image4: "",
+        image4: "",
         move1: "",
         damage1: "",
         weakness: "",

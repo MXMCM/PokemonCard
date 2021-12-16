@@ -1,7 +1,7 @@
 mixin Card(PokemonCard)
 
     div.container
-        div.card
+        div(class=`card ${PokemonCard.category}`)
             div.card-title=PokemonCard.name
             div.card-title-Hp=PokemonCard.hp
             div.card-title-type
